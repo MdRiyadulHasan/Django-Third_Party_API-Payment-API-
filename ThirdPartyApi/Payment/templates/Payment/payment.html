@@ -1,0 +1,23 @@
+<!-- payment/payment.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_51NjyAiFdAmL575lgvzDHMoGe7p4dU8OEifxYxEyxJE2QvGzxj4zV5I0xDlanlrXA7IpGUWi8iEqNyaiAQc2f1p1B00lKq8kQwN"
+            data-amount="1000"
+            data-name="Your Company Name"
+            data-description="Payment for products/services"
+            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+            data-locale="auto"
+            data-currency="usd">
+        </script>
+    </form>
+</body>
+</html>

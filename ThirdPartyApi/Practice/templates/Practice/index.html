@@ -1,0 +1,67 @@
+<!-- weather/templates/weather/weather.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body >
+    <h1>Weather for {{ city }}</h1>
+    {% if weatherData %}
+    <p>Temperature: {{ weatherData.temperature }}°C</p>
+    <p>Description: {{ weatherData.description }}</p>
+    <p>Country : {{ weatherData.country }}</p>
+    {% else %}
+    <p>Weather data not available.</p>
+    {% endif %}
+    <form method="get">
+        <input type="text" name="city" placeholder="Enter city">
+        <button type="submit">Get Weather</button>
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .weather-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="weather-box">
+            <h1>Weather for {{ city }}</h1>
+            {% if weatherData %}
+            <p>Temperature: {{ weatherData.temperature }}°C</p>
+            <p>Description: {{ weatherData.description }}</p>
+            <p>Country: {{ weatherData.country }}</p>
+            {% else %}
+            <p>Weather data not available.</p>
+            {% endif %}
+            <form method="get">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="city" placeholder="Enter city">
+                </div>
+                <button type="submit" class="btn btn-primary">Get Weather</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
